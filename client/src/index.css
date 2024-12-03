@@ -42,7 +42,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #65e465;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,7 +54,22 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+label {
+  display: block;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.form-items {
+  text-align: left;
+  margin: 0px 0px 20px;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
     background-color: #ffffff;
