@@ -43,7 +43,19 @@ const GoalForm = () => {
           <label>Intent Statement (what and target frequency):</label>
           <input type="text" name="intent" onChange={handleVals} />
         </div>
-        <button>Create</button>
+        <div className="form-items">
+          <button style={{ margin: "0px 5px" }}>Create</button>
+          <button
+            style={{
+              margin: "0px 5px",
+              backgroundColor: "red",
+            }}
+          >
+            <Link to={"/"} style={{ color: "black" }}>
+              Dashboard
+            </Link>
+          </button>
+        </div>
       </form>
     </div>
   );
