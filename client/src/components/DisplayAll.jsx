@@ -18,6 +18,12 @@ const DisplayAll = () => {
   return (
     <div>
       <h1>My Goals</h1>
+      {allGoals.map((thisGoal) => (
+        <div key={thisGoal._id}>
+          <p>{thisGoal.header}</p>
+          <p>{thisGoal.intent}</p>
+        </div>
+      ))}
       <div>Goal 1</div>
       <div>Goal 2</div>
       <div>Goal 3</div>
