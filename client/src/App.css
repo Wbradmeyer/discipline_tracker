@@ -14,6 +14,9 @@
 
 .card {
   padding: 2em;
+  margin: 2em 0em;
+  background-color: purple;
+  border: 1px solid white;
 }
 
 .read-the-docs {

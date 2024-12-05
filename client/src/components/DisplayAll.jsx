@@ -19,15 +19,11 @@ const DisplayAll = () => {
     <div>
       <h1>My Goals</h1>
       {allGoals.map((thisGoal) => (
-        <div key={thisGoal._id}>
+        <div key={thisGoal._id} className="card">
           <p>{thisGoal.header}</p>
           <p>{thisGoal.intent}</p>
         </div>
       ))}
-      <div>Goal 1</div>
-      <div>Goal 2</div>
-      <div>Goal 3</div>
-      <div>Goal 4</div>
       <div>
         <button>
           <Link to={"/goals/create"}>+ New Goal</Link>
