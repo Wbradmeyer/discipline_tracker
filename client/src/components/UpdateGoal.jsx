@@ -22,7 +22,7 @@ const UpdateGoal = () => {
   }, []);
 
   const handleVals = (e) => {
-    setGoal({ [e.target.name]: e.target.value });
+    setGoal({ ...goal, [e.target.name]: e.target.value });
   };
 
   const onSubmitHandler = (e) => {
