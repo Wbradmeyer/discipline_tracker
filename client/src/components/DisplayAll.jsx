@@ -15,6 +15,18 @@ const DisplayAll = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleDelete = (e, id) => {
+    axios
+      .delete(`http://localhost:8000/api/goals/delete/${id}`)
+      .then((res) => {
+        console.log(res);
+        const newList = allGoals.filter((goal) => goal._id !== id);
+        setAllGoals(newList);
+      })
+      .catch((err) => console.log(err));
+    navigate("/");
+  };
+
   return (
     <div>
       <h1>My Goals</h1>
@@ -22,6 +34,12 @@ const DisplayAll = () => {
         <div key={thisGoal._id} className="card">
           <p>{thisGoal.header}</p>
           <p>{thisGoal.intent}</p>
+          <button
+            style={{ backgroundColor: "red" }}
+            onClick={(e) => handleDelete(e, thisGoal._id)}
+          >
+            Delete
+          </button>
         </div>
       ))}
       <div>
