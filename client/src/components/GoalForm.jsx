@@ -7,7 +7,6 @@ const GoalForm = () => {
   const [goal, setGoal] = useState({
     header: "",
     intent: "",
-    entries: [],
   });
   const [error, setError] = useState({});
 
