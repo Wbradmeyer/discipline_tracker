@@ -36,10 +36,18 @@ const DisplayAll = () => {
           <p>{thisGoal.header}</p>
           <p>{thisGoal.intent}</p>
           <button
-            style={{ backgroundColor: "red" }}
+            style={{ backgroundColor: "red", margin: "5px" }}
             onClick={(e) => handleDelete(e, thisGoal._id)}
           >
             Delete
+          </button>
+          <button style={{ backgroundColor: "blue", margin: "5px" }}>
+            <Link
+              to={`/goals/update/${thisGoal._id}`}
+              style={{ color: "white" }}
+            >
+              Edit Goal
+            </Link>
           </button>
         </div>
       ))}
