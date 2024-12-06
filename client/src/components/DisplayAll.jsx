@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const DisplayAll = () => {
+  const navigate = useNavigate();
   const [allGoals, setAllGoals] = useState([]);
 
   useEffect(() => {
