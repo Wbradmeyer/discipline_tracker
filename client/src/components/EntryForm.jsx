@@ -64,13 +64,21 @@ const EntryForm = () => {
             <option value="7">Saturday</option>
           </select>
         </div>
-        <div className="form-items">
-          <label>Completed</label>
+        <div
+          className="form-items"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <label style={{ margin: "5px" }}>Completed</label>
           <input
             type="checkbox"
             name="completed"
             value={true}
             onChange={handleVals}
+            style={{
+              width: "auto",
+              height: "auto",
+              margin: "7px 5px 4px",
+            }}
           />
         </div>
         <div className="form-items">
@@ -92,6 +100,19 @@ const EntryForm = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div className="form-items">
+          <button style={{ margin: "0px 5px" }}>Create</button>
+          <button
+            style={{
+              margin: "0px 5px",
+              backgroundColor: "red",
+            }}
+          >
+            <Link to={"/"} style={{ color: "black" }}>
+              Dashboard
+            </Link>
+          </button>
         </div>
       </form>
     </div>
