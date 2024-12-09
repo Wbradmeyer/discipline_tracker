@@ -7,7 +7,7 @@ const EntryForm = () => {
   const [allGoals, setAllGoals] = useState([]);
   const [entry, setEntry] = useState({
     date: "",
-    dayOfWeek: 1,
+    dayOfWeek: 0,
     completed: false,
     description: "",
     goalId: "",
