@@ -53,6 +53,10 @@ input, select {
   width: 150px;
 }
 
+#color {
+  width: 50px;
+}
+
 .form-items {
   text-align: left;
   margin: 0px 0px 20px;

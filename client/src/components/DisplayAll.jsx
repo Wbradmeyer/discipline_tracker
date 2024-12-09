@@ -41,7 +41,7 @@ const DisplayAll = () => {
       </div>
       {allGoals.map((thisGoal) => (
         <div key={thisGoal._id} className="card">
-          <p>{thisGoal.header}</p>
+          <h2>{thisGoal.header}</h2>
           <p>{thisGoal.intent}</p>
           <button
             style={{ backgroundColor: "red", margin: "5px" }}

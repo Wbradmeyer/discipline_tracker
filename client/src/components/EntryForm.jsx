@@ -11,6 +11,7 @@ const EntryForm = () => {
     completed: false,
     description: "",
     goalId: "",
+    color: "#808080",
   });
   const [error, setError] = useState({});
 
@@ -104,6 +105,10 @@ const EntryForm = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div className="form-items">
+          <label>Color for Completed</label>
+          <input type="color" name="color" id="color" />
         </div>
         <div className="form-items">
           <button style={{ margin: "0px 5px" }}>Create</button>
