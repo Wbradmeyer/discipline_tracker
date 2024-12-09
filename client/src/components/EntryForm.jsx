@@ -68,7 +68,7 @@ const EntryForm = () => {
           className="form-items"
           style={{ display: "flex", alignItems: "center" }}
         >
-          <label style={{ margin: "5px" }}>Completed</label>
+          <label>Completed</label>
           <input
             type="checkbox"
             name="completed"
@@ -93,7 +93,6 @@ const EntryForm = () => {
         <div className="form-items">
           <label>Assigned Goal</label>
           <select name="goalId" onChange={handleVals}>
-            {/* loop through all goals, each one list the name, values equals id */}
             {allGoals.map((goal, index) => (
               <option key={index} value={goal._id}>
                 {goal.header}
