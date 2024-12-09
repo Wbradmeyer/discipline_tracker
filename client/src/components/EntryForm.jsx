@@ -54,14 +54,19 @@ const EntryForm = () => {
         </div>
         <div className="form-items">
           <label>Day of the Week</label>
-          <select type="number" name="dayOfWeek" onChange={handleVals}>
-            <option value="1">Sunday</option>
-            <option value="2">Monday</option>
-            <option value="3">Tuesday</option>
-            <option value="4">Wednesday</option>
-            <option value="5">Thursday</option>
-            <option value="6">Friday</option>
-            <option value="7">Saturday</option>
+          <select
+            type="number"
+            name="dayOfWeek"
+            id="dayOfWeek"
+            onChange={handleVals}
+          >
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
           </select>
         </div>
         <div
@@ -92,7 +97,7 @@ const EntryForm = () => {
         </div>
         <div className="form-items">
           <label>Assigned Goal</label>
-          <select name="goalId" onChange={handleVals}>
+          <select name="goalId" onChange={handleVals} id="goal">
             {allGoals.map((goal, index) => (
               <option key={index} value={goal._id}>
                 {goal.header}

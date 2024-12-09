@@ -39,10 +39,18 @@ label {
   display: block;
 }
 
-input {
+input, select {
   width: 250px;
   height: 30px;
   border-radius: 5px;
+}
+
+#dayOfWeek {
+  width: 100px;
+}
+
+#goal {
+  width: 150px;
 }
 
 .form-items {
