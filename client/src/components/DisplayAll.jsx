@@ -31,6 +31,14 @@ const DisplayAll = () => {
   return (
     <div>
       <h1>My Goals</h1>
+      <div>
+        <button>
+          <Link to={"/goals/create"}>+ New Goal</Link>
+        </button>
+        <button style={{ backgroundColor: "yellow", margin: "5px" }}>
+          <Link to={"/entries/create"}>+ New Entry</Link>
+        </button>
+      </div>
       {allGoals.map((thisGoal) => (
         <div key={thisGoal._id} className="card">
           <p>{thisGoal.header}</p>
@@ -51,11 +59,6 @@ const DisplayAll = () => {
           </button>
         </div>
       ))}
-      <div>
-        <button>
-          <Link to={"/goals/create"}>+ New Goal</Link>
-        </button>
-      </div>
     </div>
   );
 };
