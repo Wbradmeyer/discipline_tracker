@@ -2,19 +2,25 @@ const mongoose = require('mongoose')
 
 const EntrySchema = new mongoose.Schema({
     date: {
-        type: Date
+        type: Date,
+        required: [true, "Please select a date."]
     },
     dayOfWeek: {
-        type: Array
+        type: Number
     },
     completed: {
         type: Boolean
     },
     description: {
         type: String,
+        required: [true, "Please include a description."],
         maxlength: [255, "Description can't exceed 255 characters."]
     },
     goalId: {
+        type: String,
+        required: [true, "Please select a goal to assign this entry to."]
+    },
+    color: {
         type: String
     }},
     {timestamps: true}
