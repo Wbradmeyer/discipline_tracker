@@ -5,6 +5,7 @@ import axios from "axios";
 const DisplayAll = () => {
   const navigate = useNavigate();
   const [allGoals, setAllGoals] = useState([]);
+  const [allEntries, setAllEntries] = useState([]);
 
   useEffect(() => {
     axios
@@ -12,6 +13,16 @@ const DisplayAll = () => {
       .then((res) => {
         console.log(res);
         setAllGoals(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/entries")
+      .then((res) => {
+        console.log(res);
+        setAllEntries(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -57,6 +68,15 @@ const DisplayAll = () => {
               Edit Goal
             </Link>
           </button>
+        </div>
+      ))}
+      {allEntries.map((thisEntry) => (
+        <div key={thisEntry._id}>
+          <p>{thisEntry.date}</p>
+          <p>{thisEntry.dayOfWeek}</p>
+          <p>{thisEntry.completed}</p>
+          <p>{thisEntry.description}</p>
+          <p>{thisEntry.color}</p>
         </div>
       ))}
     </div>
