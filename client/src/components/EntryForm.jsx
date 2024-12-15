@@ -78,7 +78,6 @@ const EntryForm = () => {
           <input
             type="checkbox"
             name="completed"
-            value={true}
             onChange={handleVals}
             style={{
               width: "auto",
