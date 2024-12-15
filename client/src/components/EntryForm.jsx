@@ -98,6 +98,7 @@ const EntryForm = () => {
         <div className="form-items">
           <label>Assigned Goal</label>
           <select name="goalId" onChange={handleVals} id="goal">
+            <option value=""> -- Select a Goal -- </option>
             {allGoals.map((goal, index) => (
               <option key={index} value={goal._id}>
                 {goal.header}
