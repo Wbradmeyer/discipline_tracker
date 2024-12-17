@@ -45,7 +45,7 @@ const UpdateEntry = () => {
 
   const handleDelete = (e, id) => {
     axios
-      .delete(`http://localhost:8000/api/goals/delete/${id}`)
+      .delete(`http://localhost:8000/api/entries/delete/${id}`)
       .then((res) => {
         console.log(res);
       })
