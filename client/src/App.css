@@ -37,3 +37,9 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.entry-box {
+  border: 1px solid white;
+  width: 20px;
+  height: 20px;
+}

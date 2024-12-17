@@ -58,9 +58,11 @@ const DisplayAll = () => {
             {allEntries
               .filter((a) => a.goalId == thisGoal._id)
               .map((thisEntry) => (
-                <div key={thisEntry._id} className="entry-box">
-                  hello
-                </div>
+                <div
+                  key={thisEntry._id}
+                  className="entry-box"
+                  style={{ backgroundColor: thisEntry.color }}
+                ></div>
               ))}
           </div>
           <button
