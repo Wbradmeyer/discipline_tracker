@@ -54,6 +54,15 @@ const DisplayAll = () => {
         <div key={thisGoal._id} className="card">
           <h2>{thisGoal.header}</h2>
           <p>{thisGoal.intent}</p>
+          <div>
+            {allEntries
+              .filter((a) => a.goalId == thisGoal._id)
+              .map((thisEntry) => (
+                <div key={thisEntry._id} className="entry-box">
+                  hello
+                </div>
+              ))}
+          </div>
           <button
             style={{ backgroundColor: "red", margin: "5px" }}
             onClick={(e) => handleDelete(e, thisGoal._id)}
@@ -68,15 +77,6 @@ const DisplayAll = () => {
               Edit Goal
             </Link>
           </button>
-        </div>
-      ))}
-      {allEntries.map((thisEntry) => (
-        <div key={thisEntry._id}>
-          <p>{thisEntry.date}</p>
-          <p>{thisEntry.dayOfWeek}</p>
-          <p>{thisEntry.completed}</p>
-          <p>{thisEntry.description}</p>
-          <p>{thisEntry.color}</p>
         </div>
       ))}
     </div>
