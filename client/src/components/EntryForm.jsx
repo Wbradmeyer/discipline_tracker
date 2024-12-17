@@ -9,7 +9,7 @@ const EntryForm = () => {
     date: "",
     dayOfWeek: 0,
     completed: false,
-    description: "",
+    description: "Nothing today",
     goalId: "",
     color: "#808080",
   });
@@ -93,6 +93,7 @@ const EntryForm = () => {
           <label>Description</label>
           <textarea
             name="description"
+            value={entry.description}
             onChange={handleVals}
             cols={32}
             rows={4}
