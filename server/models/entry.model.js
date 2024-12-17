@@ -13,7 +13,6 @@ const EntrySchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: [true, "Please include a description."],
         maxlength: [255, "Description can't exceed 255 characters."]
     },
     goalId: {

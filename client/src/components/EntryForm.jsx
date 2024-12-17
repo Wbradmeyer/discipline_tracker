@@ -39,8 +39,8 @@ const EntryForm = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.response.data.error.errors.name);
-        setError(err.response.data.error.errors.name);
+        console.log(err.response.data.error);
+        setError(err.response.data.error);
       });
   };
 
@@ -78,7 +78,10 @@ const EntryForm = () => {
           <input
             type="checkbox"
             name="completed"
-            onChange={handleVals}
+            checked={entry.completed}
+            onChange={(e) =>
+              setEntry({ ...entry, completed: e.target.checked })
+            }
             style={{
               width: "auto",
               height: "auto",
