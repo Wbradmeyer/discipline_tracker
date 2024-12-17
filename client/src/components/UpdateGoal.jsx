@@ -38,6 +38,7 @@ const UpdateGoal = () => {
         setError(err.response.data.error.errors.name);
       });
   };
+
   return (
     <div>
       <h1>Edit Goal</h1>
@@ -63,16 +64,9 @@ const UpdateGoal = () => {
         </div>
         <div className="form-items">
           <button style={{ margin: "0px 5px" }}>Edit</button>
-          <button
-            style={{
-              margin: "0px 5px",
-              backgroundColor: "red",
-            }}
-          >
-            <Link to={"/"} style={{ color: "black" }}>
-              Dashboard
-            </Link>
-          </button>
+          <Link to={"/"} className="back">
+            Dashboard
+          </Link>
         </div>
       </form>
     </div>
