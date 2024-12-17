@@ -62,7 +62,14 @@ const DisplayAll = () => {
                   key={thisEntry._id}
                   className="entry-box"
                   style={{ backgroundColor: thisEntry.color }}
-                ></div>
+                >
+                  <Link
+                    to={`entries/update/${thisEntry._id}`}
+                    style={{ color: "white" }}
+                  >
+                    {thisEntry.dayOfWeek}
+                  </Link>
+                </div>
               ))}
           </div>
           <button
