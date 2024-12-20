@@ -32,7 +32,7 @@ const UpdateEntry = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     axios
-      .patch(`http://localhost:8000/api/entries/update/${id}`, goal)
+      .patch(`http://localhost:8000/api/entries/update/${id}`, entry)
       .then((res) => {
         console.log(res);
         navigate("/");
