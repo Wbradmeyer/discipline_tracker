@@ -54,11 +54,11 @@ const DisplayAll = () => {
         <div key={thisGoal._id} className="card">
           <h2>{thisGoal.header}</h2>
           <p>{thisGoal.intent}</p>
-          <div>
+          <div className="tracker-box">
             {allEntries
               .filter((a) => a.goalId == thisGoal._id)
               .map((thisEntry) => (
-                <div
+                <p
                   key={thisEntry._id}
                   className="entry-box"
                   style={{ backgroundColor: thisEntry.color }}
@@ -69,7 +69,7 @@ const DisplayAll = () => {
                   >
                     {thisEntry.dayOfWeek}
                   </Link>
-                </div>
+                </p>
               ))}
           </div>
           <button className="delete">Delete</button>
