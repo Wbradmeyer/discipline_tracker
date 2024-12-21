@@ -15,8 +15,9 @@
 .card {
   padding: 2em;
   margin: 2em 0em;
-  background-color: purple;
+  background-color: rgb(63, 33, 63);
   border: 1px solid white;
+  border-radius: 15px;
 }
 
 button, .back, .delete {
