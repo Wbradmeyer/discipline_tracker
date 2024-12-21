@@ -6,6 +6,7 @@ const DisplayAll = () => {
   const navigate = useNavigate();
   const [allGoals, setAllGoals] = useState([]);
   const [allEntries, setAllEntries] = useState([]);
+  const daysOfWeek = ["S", "M", "T", "W", "Th", "F", "S"];
 
   useEffect(() => {
     axios
@@ -52,8 +53,10 @@ const DisplayAll = () => {
       </div>
       {allGoals.map((thisGoal) => (
         <div key={thisGoal._id} className="card">
-          <h2>{thisGoal.header}</h2>
-          <p>{thisGoal.intent}</p>
+          <div className="header-card">
+            <h2>{thisGoal.header}</h2>
+            <p>{thisGoal.intent}</p>
+          </div>
           <div className="tracker-box">
             {allEntries
               .filter((a) => a.goalId == thisGoal._id)
@@ -67,7 +70,7 @@ const DisplayAll = () => {
                     to={`entries/update/${thisEntry._id}`}
                     style={{ color: "white" }}
                   >
-                    {thisEntry.dayOfWeek}
+                    {daysOfWeek[thisEntry.dayOfWeek]}
                   </Link>
                 </p>
               ))}

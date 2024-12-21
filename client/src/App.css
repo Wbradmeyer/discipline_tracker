@@ -16,9 +16,16 @@
   padding: 2em;
   margin: 2em 0em;
   background-color: rgb(63, 33, 63);
-  /* border: 1px solid white; */
   border-radius: 15px 50px;
   box-shadow: 0px 0px 10px 10px rgb(24, 24, 24);
+}
+
+.header-card {
+  border-radius: 15px 40px;
+  box-shadow: 0px 0px 2px 2px rgb(24, 24, 24);
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: rgb(1, 1, 129);
 }
 
 button, .back, .delete {
