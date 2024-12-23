@@ -43,7 +43,7 @@ button, .back, .delete {
 
 .back {
   margin: "0px 5px";
-  background-color: red;
+  background-color: rgb(215, 0, 0);
   color: black;
 }
 
@@ -75,4 +75,11 @@ button:focus-visible {
   height: 20px;
   font-size: small;
   margin: 0;
+}
+
+.form-card {
+  border-radius: 15px 50px;
+  background-color: rgb(63, 33, 63);
+  box-shadow: 0px 0px 10px 10px rgb(24, 24, 24);
+  padding: 20px;
 }

@@ -42,7 +42,7 @@ const UpdateGoal = () => {
   return (
     <div>
       <h1>Edit Goal</h1>
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler} className="form-card">
         {error ? <p style={{ color: "red" }}>{error.message}</p> : null}
         <div className="form-items">
           <label>Header:</label>
