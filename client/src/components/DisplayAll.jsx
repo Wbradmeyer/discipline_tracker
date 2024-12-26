@@ -42,7 +42,7 @@ const DisplayAll = () => {
 
   return (
     <div>
-      <h1>My Goals</h1>
+      <h1>--- My Goals ---</h1>
       <div>
         <button>
           <Link to={"/goals/create"}>+ New Goal</Link>
