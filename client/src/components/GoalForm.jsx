@@ -31,7 +31,7 @@ const GoalForm = () => {
 
   return (
     <div>
-      <h1>Add a New Goal</h1>
+      <h1>--- New Goal ---</h1>
       <form onSubmit={onSubmitHandler} className="form-card">
         {error ? <p style={{ color: "red" }}>{error.message}</p> : null}
         <div className="form-items">

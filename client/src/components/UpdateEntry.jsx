@@ -55,7 +55,7 @@ const UpdateEntry = () => {
 
   return (
     <div>
-      <h1>Edit Entry</h1>
+      <h1>--- Edit Entry ---</h1>
       <form onSubmit={onSubmitHandler} className="form-card">
         {error ? <p style={{ color: "red" }}>{error.message}</p> : null}
         <div className="form-items">
