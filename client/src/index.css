@@ -39,10 +39,14 @@ label {
   display: block;
 }
 
-input, select {
+input, select, textarea {
   width: 250px;
   height: 30px;
   border-radius: 5px;
+}
+
+textarea {
+  height: 80px;
 }
 
 #dayOfWeek {
