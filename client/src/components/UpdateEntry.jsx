@@ -20,7 +20,14 @@ const UpdateEntry = () => {
       .get(`http://localhost:8000/api/entries/getOne/${id}`)
       .then((res) => {
         console.log(res);
-        setEntry(res.data);
+        const entryData = res.data;
+
+        // Format date to YYYY-MM-DD
+        if (entryData.date) {
+          entryData.date = new Date(entryData.date).toISOString().split("T")[0];
+        }
+
+        setEntry(entryData);
       })
       .catch((err) => console.log(err));
   }, []);
