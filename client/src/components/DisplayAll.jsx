@@ -40,6 +40,16 @@ const DisplayAll = () => {
     navigate("/");
   };
 
+  const showDate = (e, element) => {
+    e.preventDefault();
+    element.style.visibility = "visible";
+  };
+
+  const hideDate = (e, element) => {
+    e.preventDefault();
+    element.style.visibility = "hidden";
+  };
+
   return (
     <div>
       <h1>--- My Goals ---</h1>
@@ -61,7 +71,7 @@ const DisplayAll = () => {
             {allEntries
               .filter((a) => a.goalId == thisGoal._id)
               .map((thisEntry) => (
-                <p
+                <div
                   key={thisEntry._id}
                   className="entry-box"
                   style={{ backgroundColor: thisEntry.color }}
@@ -72,7 +82,14 @@ const DisplayAll = () => {
                   >
                     {daysOfWeek[thisEntry.dayOfWeek]}
                   </Link>
-                </p>
+                  <p
+                    className="popup"
+                    onMouseOver={(e) => showDate(this)}
+                    onMouseOut={(e) => hideDate(this)}
+                  >
+                    {thisEntry.date}
+                  </p>
+                </div>
               ))}
           </div>
           <button className="delete">Delete</button>

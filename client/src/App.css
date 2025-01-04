@@ -83,3 +83,10 @@ button:focus-visible {
   box-shadow: 0px 0px 10px 10px rgb(24, 24, 24);
   padding: 20px;
 }
+
+.popup {
+  color: white;
+  background-color: red;
+  position: sticky;
+  visibility: hidden;
+}
