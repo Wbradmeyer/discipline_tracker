@@ -7,7 +7,7 @@ const DisplayAll = () => {
   const [allGoals, setAllGoals] = useState([]);
   const [allEntries, setAllEntries] = useState([]);
   const daysOfWeek = ["S", "M", "T", "W", "Th", "F", "S"];
-  const [hoverVisibility, setHoverVisibility] = useState("");
+  const [hoveredId, setHoveredId] = useState(null);
 
   useEffect(() => {
     axios
@@ -41,12 +41,12 @@ const DisplayAll = () => {
     navigate("/");
   };
 
-  const showDate = (element) => {
-    setHoverVisibility("visible");
+  const showDate = (entryId) => {
+    setHoveredId();
   };
 
-  const hideDate = (element) => {
-    setHoverVisibility("hidden");
+  const hideDate = () => {
+    setHoveredId(null);
   };
 
   return (
@@ -78,14 +78,14 @@ const DisplayAll = () => {
                   <Link
                     to={`entries/update/${thisEntry._id}`}
                     style={{ color: "white" }}
-                    onMouseOver={(e) => showDate(this)}
-                    onMouseOut={(e) => hideDate(this)}
+                    onMouseOver={() => showDate(thisEntry._id)}
+                    onMouseOut={hideDate}
                   >
                     {daysOfWeek[thisEntry.dayOfWeek]}
                   </Link>
-                  <p className="popup" style={{ visibility: hoverVisibility }}>
-                    {thisEntry.date}
-                  </p>
+                  {hoveredId === thisEntry._id && (
+                    <p className="popup">{thisEntry.date}</p>
+                  )}
                 </div>
               ))}
           </div>
