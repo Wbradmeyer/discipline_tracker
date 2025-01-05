@@ -1,5 +1,3 @@
-- hover only displays one popup
-
 - format date to smaller popup w/o times
 
 - 

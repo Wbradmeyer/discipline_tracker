@@ -8,6 +8,7 @@ const DisplayAll = () => {
   const [allEntries, setAllEntries] = useState([]);
   const daysOfWeek = ["S", "M", "T", "W", "Th", "F", "S"];
   const [hoveredId, setHoveredId] = useState(null);
+  const [hoverDate, setHoverDate] = useState("");
 
   useEffect(() => {
     axios
@@ -41,12 +42,24 @@ const DisplayAll = () => {
     navigate("/");
   };
 
-  const showDate = (e, entryId) => {
+  const showDate = (e, entryId, entryDate) => {
     setHoveredId(entryId);
+    try {
+      const formattedDate = new Date(entryDate).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      setHoverDate(formattedDate);
+    } catch (error) {
+      console.error("Invalid date format:", entryDate);
+      setHoverDate("Invalid Date");
+    }
   };
 
   const hideDate = () => {
     setHoveredId(null);
+    setHoverDate("");
   };
 
   return (
@@ -78,13 +91,13 @@ const DisplayAll = () => {
                   <Link
                     to={`entries/update/${thisEntry._id}`}
                     style={{ color: "white" }}
-                    onMouseOver={() => showDate(thisEntry._id)}
+                    onMouseOver={() => showDate(thisEntry._id, thisEntry.date)}
                     onMouseOut={hideDate}
                   >
                     {daysOfWeek[thisEntry.dayOfWeek]}
                   </Link>
                   {hoveredId === thisEntry._id && (
-                    <p className="popup">{thisEntry.date}</p>
+                    <p className="popup">{hoverDate}</p>
                   )}
                 </div>
               ))}
