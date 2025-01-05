@@ -89,7 +89,12 @@ const DisplayAll = () => {
                 </div>
               ))}
           </div>
-          <button className="delete">Delete</button>
+          <button
+            className="delete"
+            onClick={(e) => handleDelete(e, thisGoal._id)}
+          >
+            Delete
+          </button>
           <button style={{ backgroundColor: "blue", margin: "5px" }}>
             <Link
               to={`/goals/update/${thisGoal._id}`}
