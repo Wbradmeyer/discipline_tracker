@@ -41,8 +41,8 @@ const DisplayAll = () => {
     navigate("/");
   };
 
-  const showDate = (entryId) => {
-    setHoveredId();
+  const showDate = (e, entryId) => {
+    setHoveredId(entryId);
   };
 
   const hideDate = () => {

@@ -87,6 +87,6 @@ button:focus-visible {
 .popup {
   color: white;
   background-color: red;
-  position: sticky;
-  visibility: hidden;
+  position: absolute;
+  z-index: 10;
 }
