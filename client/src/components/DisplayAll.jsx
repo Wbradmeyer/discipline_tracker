@@ -39,10 +39,9 @@ const DisplayAll = () => {
         setAllGoals(newList);
       })
       .catch((err) => console.log(err));
-    navigate("/");
   };
 
-  const showDate = (e, entryId, entryDate) => {
+  const showDate = (entryId, entryDate) => {
     setHoveredId(entryId);
     try {
       const formattedDate = new Date(entryDate).toLocaleDateString("en-US", {
@@ -81,7 +80,7 @@ const DisplayAll = () => {
           </div>
           <div className="tracker-box">
             {allEntries
-              .filter((a) => a.goalId == thisGoal._id)
+              .filter((a) => a.goalId === thisGoal._id)
               .map((thisEntry) => (
                 <div
                   key={thisEntry._id}
